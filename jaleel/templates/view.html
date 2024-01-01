@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SAT Results</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>SAT Results</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>SAT Score</th>
+            <th>Passed</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}, {{ row[2] }}, {{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ 'Pass' if row[4] > 30 else 'Fail' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
